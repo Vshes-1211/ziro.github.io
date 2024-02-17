@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Games</title>
     <link rel="stylesheet" href="../css/style.css">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="top"><a href="../index.html"><home>Home</home></a></div>
@@ -24,19 +23,16 @@
     <div class="largeBlock">
         <h1>游戏库</h1>
         <hr>
-        <h6><?php
-            $json = file_get_contents("https://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v1?key=ABF7CE29993E1285EEFB9AA7C3FC0E54&steamid=76561199525041848");
-            $data = json_decode($json, true);
-            echo "GameCount:".$data[response][total_count];
-        ?></h6>
+        <h6></h6>
         <h3>最近玩过的游戏<br>
-            <h6 id="game0">game1</h6>
-            <h6 id="game1">game2</h6>
-            <h6 id="game2">game3</h6>
-            <h6 id="game3">game4</h6>
-            <h6 id="game4">game5</h6>
-            <h6 id="game5">game6</h6>
+            <h6 id="game0">Apex Legends</h6>
+            <h6 id="game1">Grand Theft Auto V</h6>
+            <h6 id="game2">Aimlabs</h6>
+            <h6 id="game3">Muse Dash</h6>
+            <h6 id="game4">Quaver</h6>
+            <h6 id="game5">Oxygen Not Included</h6>
         </h3>
+        <h6>其实是想用api的,但是js引用api后就会报错,逛了一圈博客也没什么用所以不管了</h6>
     </div>
 </body>
 </html>
