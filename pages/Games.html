@@ -6,18 +6,6 @@
     <title>Games</title>
     <link rel="stylesheet" href="../css/style.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script>
-        function SendXMLHttpRequest(){
-            $.ajax({      
-              url: "http://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v1?key=FFE519B9EC079615274E214A4ECDEC16&steamid=76561199525041848",
-              type: "GET",// Whether this is a POST or GET request
-          }).done(function( res ) {
-              games = JSON.stringify(res.response.games);
-               var GameCount = "我最近玩了"+res+"款游戏\n";
-               document.getElementById("GameCount").innerText = GameCount;
-          });
-        }
-    </script>
 </head>
 <body>
     <div class="top"><a href="../index.html"><home>Home</home></a></div>
@@ -36,8 +24,11 @@
     <div class="largeBlock">
         <h1>游戏库</h1>
         <hr>
-        <button type="button" onclick="SendXMLHttpRequest()">刷新</button>
-        <p id="GameCount" style="color:#b0a117fa"></p>
+        <h6><?php
+            $json = file_get_contents("https://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v1?key=ABF7CE29993E1285EEFB9AA7C3FC0E54&steamid=76561199525041848");
+            $data = json_decode($json, true);
+            echo "GameCount:".$data[response][total_count];
+        ?></h6>
         <h3>最近玩过的游戏<br>
             <h6 id="game0">game1</h6>
             <h6 id="game1">game2</h6>
@@ -48,18 +39,4 @@
         </h3>
     </div>
 </body>
-<!-- <script type="text/javascript">
-    $.ajax({
-        url:"http://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v1?key=FFE519B9EC079615274E214A4ECDEC16&steamid=76561199525041848",
-        type:"GET",
-        async:true,
-        success:function(data) {
-            var games = data.response.games;
-            var content = data.response.total_count;
-            for (var i = 0; i < games.length; i++) {
-                $("#game"+i).html(games[i].name);
-            }
-        }
-    });
-</script> -->
 </html>
