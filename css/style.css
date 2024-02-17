@@ -1,0 +1,49 @@
+.top{
+    color: white;
+    font-size: 40px;
+    font-family: KaiTi;
+    background-color: black;
+    height: 40px;
+    border:darkgrey solid;
+    padding: 0 16px;
+    border-width: 4px 4px 4px 4px;
+}
+.left{
+    background-color: black;
+    width: 120px;
+    font-family: KaiTi;
+    height: 440px;
+    border: darkgrey solid;
+    border-width: 0 4px 0 4px;
+}
+.block{
+    text-align:center;
+    width: 120px;
+    height: 40px;
+    border: darkgrey solid;
+    border-width: 0 0 4px 0;
+    float: left;
+}
+.largeBlock{
+    background-color: black;
+    height: 436px;
+    border: darkgray solid;
+    border-width: 0 4px 4px 4px;
+    margin-top: -462px;
+    text-align: left;
+    color:white;
+    margin-left: 124px;
+}
+a{
+    text-decoration: none;
+}
+bt{
+    color: white;
+    font-size: 25px;
+    font-family: KaiTi;
+}
+home{
+    color: white;
+    font-size: 40px;
+    font-family: KaiTi;
+}
